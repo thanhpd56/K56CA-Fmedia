@@ -1,0 +1,56 @@
+/* CSS Document */
+#nav_div{
+    //position: fixed;
+    margin-bottom: 10px;
+    
+}
+#main_div{
+    margin-top: 200px;
+}
+body{
+    margin: 0px;
+}
+a.active{
+    color: red;
+}
+#div_thumb{
+    height: 200px;
+    margin-bottom: 200px;
+}
+div.thumbnail{
+    height: 250px;
+    margin-bottom: 10px;
+    
+}
+#edit{
+    margin-bottom: 0px;
+}
+div.caption{
+    position: absolute;
+    bottom: 0;
+}
+div.thumbnail{
+    position: relative;
+    text-align: center;
+}
+img.thumb{
+    width:100%; height:50%;
+    
+}
+input.sb{
+    width: 200px;
+    text-align: center;
+}
+#divsb{
+    text-align: center;
+    
+}
+#defaultForm-pass{
+    margin-top: 20px;
+}
+label.err{
+    color: red;
+}
+body{
+    
+}
