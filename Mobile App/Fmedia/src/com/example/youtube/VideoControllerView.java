@@ -46,7 +46,6 @@ import java.lang.ref.WeakReference;
 import java.util.Formatter;
 import java.util.Locale;
 
-import com.example.database.DatabaseHandler;
 import com.example.model.Video;
 import com.example.vlogger.MainActivity;
 import com.example.vlogger.R;

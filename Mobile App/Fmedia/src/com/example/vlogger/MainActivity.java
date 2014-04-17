@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.adapter.NavDrawerListAdapter;
-import com.example.database.DatabaseHandler;
 import com.example.model.VideoCategory;
 import com.example.model.VideoParser;
 import com.example.youtube.OpenYouTubePlayerActivity;
@@ -71,19 +70,20 @@ public class MainActivity extends Activity {
 	private String TAG_KEY = "CATID";
 	JSONArray catList;
 	ArrayList<String> arrCats = new ArrayList<String>();
-	
+
 	// For search video
 	private static final String SEARCH_KEY = "SEARCH_KEY";
 	private static final int SEARCH_ID = -2;
 	public static String searchKey;
-	// FOR FAVOURITE VIDEOS
-	public static DatabaseHandler DB;
 
+	// FOR FAVOURITE VIDEOS
+	private static final int FAVOURITE_ID = -3;
+	public static final String FAVOURITE_TITLE = "Favourite Videos";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_x);
-		DB = new DatabaseHandler(this);
 		mTitle = mDrawerTitle = getTitle();
 		// load slide menu items
 		new GettingCategoriesAsynctask().execute();
@@ -131,6 +131,8 @@ public class MainActivity extends Activity {
 			ArrayList<VideoCategory> arrVideoCats = new ArrayList<VideoCategory>();
 			arrVideoCats.add(new VideoCategory(ALL_VIDEO_CATID, "ALL VIDEOS",
 					R.drawable.category));
+			arrVideoCats.add(new VideoCategory(FAVOURITE_ID, FAVOURITE_TITLE,
+					R.drawable.category));
 			arrVideoCats.addAll(VideoParser.getAllCategorires());
 			if (arrVideoCats != null && arrVideoCats.size() > 0)
 				return arrVideoCats;
@@ -150,7 +152,6 @@ public class MainActivity extends Activity {
 		}
 
 	}
-	
 
 	/**
 	 * Slide menu item click listener

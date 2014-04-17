@@ -1,6 +1,5 @@
 package com.example.youtube;
 
-import com.example.database.DatabaseHandler;
 import com.example.model.Video;
 import com.example.vlogger.*;
 import java.io.IOException;

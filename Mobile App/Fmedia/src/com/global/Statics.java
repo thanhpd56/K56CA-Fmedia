@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.view.WindowManager.BadTokenException;
 
-import com.example.database.DatabaseHandler;
 import com.example.vlogger.R;
 
 public class Statics {
