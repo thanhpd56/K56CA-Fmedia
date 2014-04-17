@@ -41,9 +41,9 @@ public class CustomGridViewAdapter extends ArrayAdapter<Video> {
 		{
 			holder = new RecordHolder();
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-			row = inflater.inflate(layoutResourceId, parent, false);
-			holder.txtTitle = (TextView) row.findViewById(R.id.item_text);
-			holder.imageItem = (ImageView) row.findViewById(R.id.item_image);
+			row = inflater.inflate(R.layout.video_item, parent, false);
+			holder.txtTitle = (TextView) row.findViewById(R.id.txtVideo);
+			holder.imageItem = (ImageView) row.findViewById(R.id.imgLogoVideo);
 			row.setTag(holder);
 		} else{
 			holder = (RecordHolder) row.getTag();

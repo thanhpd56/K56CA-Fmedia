@@ -15,10 +15,14 @@
         android:allowBackup="true"
         android:icon="@drawable/ico_actionbar"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+       
+         >
         <activity
             android:name="com.example.vlogger.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="landscape"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,11 +32,15 @@
         <activity
             android:name="com.example.youtube.OpenYouTubePlayerActivity"
             android:configChanges="keyboardHidden|navigation|orientation|screenLayout|uiMode|layoutDirection|screenSize|smallestScreenSize"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="landscape"
+            >
         </activity>
         <activity
             android:name="com.example.vlogger.SearchResultsActivity"
-            android:label="@string/title_activity_search_results" >
+            android:label="@string/title_activity_search_results" 
+            android:screenOrientation="landscape"
+            >
         </activity>
     </application>
 

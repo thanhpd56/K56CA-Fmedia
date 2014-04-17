@@ -3,9 +3,9 @@ import com.global.*;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.adapter.CustomGridViewAdapter;
 import com.example.loading.EndlessScrollListener;
-import com.example.model.LoadMoreListView;
+import com.example.model.LoadMoreGridView;
 import com.example.model.Video;
-import com.example.model.LoadMoreListView.OnLoadMoreListener;
+import com.example.model.LoadMoreGridView.OnLoadMoreListener;
 
 
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class SearchResultFragment extends Fragment {
 	// Adapter va array cho Gridview
 	CustomGridViewAdapter adapter = null;
 	ArrayList<Video> arrItems = new ArrayList<Video>();
-	LoadMoreListView gv; 
+	LoadMoreGridView gv; 
 	Context context;
 	// for auto loadmor
 		private static final int NUM_ITEMS = 12;
@@ -77,7 +77,7 @@ public class SearchResultFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.main_fragment, container,
 				false);
 		//indexFragment = getArguments().getInt("key");
-		gv = (LoadMoreListView) rootView.findViewById(R.id.gvVlod);
+		gv = (LoadMoreGridView) rootView.findViewById(R.id.gvVlod);
 		adapter = new CustomGridViewAdapter(getActivity(), R.layout.grid_row,
 				arrItems);
 		gv.setAdapter(adapter);
