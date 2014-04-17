@@ -111,7 +111,6 @@ public class VideoControllerView extends FrameLayout {
     private AudioManager 		leftAm;
     private boolean isFull = false;
     
-    private ToggleButton tgLove;
     public void setFull(boolean value)
     {
     	isFull = value;
@@ -250,25 +249,6 @@ public class VideoControllerView extends FrameLayout {
         sbVolumn.setOnSeekBarChangeListener(volumnSeekListener);
         sbVolumn.setMax(maxVolumn);
         sbVolumn.setProgress(currentVolumn);
-        
-        tgLove = (ToggleButton) v.findViewById(R.id.tgLove);
-        tgLove.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				// TODO Auto-generated method stub
-				// For test
-				//Toast.makeText(getContext(), "Check", Toast.LENGTH_LONG).show();
-				DatabaseHandler DB = new DatabaseHandler(getContext());
-				if(!tgLove.isChecked()){
-					DB.addVideo(video);
-				}
-				
-				int numVideos = DB.getVideosCount();
-				Toast.makeText(getContext(), numVideos+"", Toast.LENGTH_SHORT).show();
-				
-			}
-		});
         installPrevNextListeners();
     }
  

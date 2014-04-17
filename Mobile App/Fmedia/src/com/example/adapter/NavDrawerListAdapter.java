@@ -4,7 +4,7 @@ package com.example.adapter;
 
 import java.util.ArrayList;
 
-import com.example.model.NavDrawerItem;
+import com.example.model.VideoCategory;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,9 +18,9 @@ import android.widget.TextView;
 public class NavDrawerListAdapter extends BaseAdapter {
 	
 	private Context context;
-	private ArrayList<NavDrawerItem> navDrawerItems;
+	private ArrayList<VideoCategory> navDrawerItems;
 	
-	public NavDrawerListAdapter(Context context, ArrayList<NavDrawerItem> navDrawerItems){
+	public NavDrawerListAdapter(Context context, ArrayList<VideoCategory> navDrawerItems){
 		this.context = context;
 		this.navDrawerItems = navDrawerItems;
 	}

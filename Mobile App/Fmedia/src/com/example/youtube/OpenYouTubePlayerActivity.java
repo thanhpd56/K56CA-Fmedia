@@ -113,12 +113,6 @@ public class OpenYouTubePlayerActivity extends Activity implements Callback,
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	
 		setContentView(R.layout.activity_video_player);
-		Video cVideo = (Video) getIntent().getSerializableExtra("Video");
-		if(Statics.DEBUG){
-			Log.d("VideoIntent", cVideo.toString());
-		}
-		DatabaseHandler dB = new DatabaseHandler(this);
-		dB.addVideo(cVideo);
 		setupView();
 
 		// extract the playlist or video id from the intent that started this

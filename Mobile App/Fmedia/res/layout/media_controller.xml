@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -110,20 +109,6 @@
             android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp" />
-
-        <ToggleButton
-            android:id="@+id/tgLove"
-            android:layout_width="42dp"
-            android:layout_height="32dp"
-            android:layout_alignRight="@+id/sbVolumn"
-            android:layout_below="@+id/imageButton1"
-            android:background="@drawable/favourite"
-            android:checked="false" 
-            android:textOn=""
-            android:textOff=""
-            android:text=""
-            />
-
     </RelativeLayout>
 
 </LinearLayout>

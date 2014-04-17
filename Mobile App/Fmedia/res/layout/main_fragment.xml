@@ -7,25 +7,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <com.example.model.LoadMoreGridView
+        <GridView
             android:id="@+id/gvVlod"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:horizontalSpacing="0dp"
             android:numColumns="3"
             android:stretchMode="columnWidth"
-            android:verticalSpacing="0dp" >
-        </com.example.model.LoadMoreGridView>
+            android:verticalSpacing="0dp" />
 
         <Button
             android:id="@+id/btn_LoadMoreGrid"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/gvVlod"
             android:layout_gravity="center_horizontal|bottom"
             android:clickable="true"
             android:text="Load More...."
             android:textColor="#ffffff"
-            android:layout_alignBottom="@+id/gvVlod"
             android:visibility="invisible" >
         </Button>
     </RelativeLayout>
