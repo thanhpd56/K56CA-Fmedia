@@ -1,5 +1,7 @@
 package com.example.model;
 
+import com.global.Statics;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
@@ -20,6 +22,8 @@ public class SquareImageView extends ImageView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(getMeasuredWidth(), getMeasuredWidth()); //Snap to width
+        int width = getMeasuredWidth();
+        int height = (int) (Statics.IMAGE_RATIO*width);
+        setMeasuredDimension(width, height); //Snap to width
     }
 }

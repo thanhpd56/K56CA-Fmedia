@@ -140,14 +140,14 @@ public class MyVideoDatabase {
 		try {
 			while (cursor.moveToNext()) {
 				Video video = new Video();
-				video.setId(Integer.parseInt(cursor.getString(0)));
+				video.setId(cursor.getInt(0));
 				video.setTitle(cursor.getString(1));
 				video.setUrl(cursor.getString(2));
 				video.setDuringTime(cursor.getString(3));
 				video.setImageUrl(cursor.getString(4));
 				video.setDescription(cursor.getString(5));
-				video.setRating(Float.parseFloat(cursor.getString(6)));
-				video.setCreateTime(Integer.parseInt(cursor.getString(7)));
+				video.setRating(cursor.getFloat(6));
+				video.setCreateTime(cursor.getInt(7));
 				list.add(video);
 			}
 			return list;

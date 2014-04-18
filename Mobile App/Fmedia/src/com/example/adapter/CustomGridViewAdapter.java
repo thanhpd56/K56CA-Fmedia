@@ -24,10 +24,11 @@ import android.widget.ToggleButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class CustomGridViewAdapter extends ArrayAdapter<Video> {
-	
+
 	Context context;
 	int layoutResourceId;
 	ArrayList<Video> arrItem = new ArrayList<Video>();
+
 	public CustomGridViewAdapter(Context context, int resource,
 			ArrayList<Video> objects) {
 		super(context, resource, objects);
@@ -36,49 +37,50 @@ public class CustomGridViewAdapter extends ArrayAdapter<Video> {
 		this.layoutResourceId = resource;
 		this.arrItem = objects;
 	}
+
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		View row = convertView;
 		RecordHolder holder = null;
-		if(row== null)
-		{
+		if (row == null) {
 			holder = new RecordHolder();
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
 			row = inflater.inflate(R.layout.video_item, parent, false);
 			holder.txtTitle = (TextView) row.findViewById(R.id.txtVideo);
 			holder.imageItem = (ImageView) row.findViewById(R.id.imgLogoVideo);
 			holder.tgButton = (ToggleButton) row.findViewById(R.id.tgLike);
-			
+
 			row.setTag(holder);
-		} else{
+		} else {
 			holder = (RecordHolder) row.getTag();
 		}
-		Video  item = arrItem.get(position);
-		holder.txtTitle.setText(item.getTitle()+"");
+		Video item = arrItem.get(position);
+		holder.txtTitle.setText(item.getTitle() + "");
 		String image_url = item.getImageUrl();
-		Glide.load(image_url)
-        .centerCrop()
-        .into(holder.imageItem);
-		
+		Glide.load(image_url).centerCrop().into(holder.imageItem);
+
 		holder.tgButton.setOnCheckedChangeListener(null);
-		holder.tgButton.setChecked(VideoManagement.getInstance().isMyVideo(context, item));
+		holder.tgButton.setChecked(VideoManagement.getInstance().isMyVideo(
+				context, item));
 		holder.tgButton.setTag(item.getId());
-		
+
 		OnCheckedChangeListener onCheckLikeChange = new OnCheckedChangeListener() {
-			
+
 			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			public void onCheckedChanged(CompoundButton buttonView,
+					boolean isChecked) {
 				// TODO Auto-generated method stub
 				int id = (Integer) buttonView.getTag();
 				for (Video video : arrItem) {
-					if(video.getId() == id){
-						if(isChecked){
-							VideoManagement.getInstance().addMyVideo(context, video);
-							
-						}else
-						{
-							VideoManagement.getInstance().removeMyVideo(context, video);
+					if (video.getId() == id) {
+						if (isChecked) {
+							VideoManagement.getInstance().addMyVideo(context,
+									video);
+
+						} else {
+							VideoManagement.getInstance().removeMyVideo(
+									context, video);
 						}
 					}
 				}
@@ -87,25 +89,16 @@ public class CustomGridViewAdapter extends ArrayAdapter<Video> {
 		holder.tgButton.setOnCheckedChangeListener(onCheckLikeChange);
 		return row;
 	}
-	static class RecordHolder{
+
+	static class RecordHolder {
 		TextView txtTitle;
 		ImageView imageItem;
 		ToggleButton tgButton;
 	}
-	
-	public void appendItems(ArrayList items) {
-		 arrItem.addAll(items);
-		 notifyDataSetChanged();
-		}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void appendItems(ArrayList items) {
+		arrItem.addAll(items);
+		notifyDataSetChanged();
+	}
+
 }

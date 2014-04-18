@@ -140,7 +140,7 @@ public class VideoParser {
 
 	public static ArrayList<Video> searchVideo(String key) {
 		ArrayList<Video> arrVideos = new ArrayList<Video>();
-		String url = Statics.URL_SEARCH;
+		String url = Statics.URL_SEARCH + key;
 		Log.d(TAG, key);
 		JSONParser parser = new JSONParser();
 		JSONObject json = parser.makeHttpRequest(url, "GET", null);
